@@ -1,0 +1,8 @@
+{
+  "name": "test-image-upload-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hkgnp/test-image-upload-api.git",
+  "author": "hkgnp <ben@pngs.cc>",
+  "license": "MIT"
+}
