@@ -1,8 +1,3 @@
-// 1. When user clicks submit, Mongo API to 'post-details' is triggered and form body (except media) is sent to Mongo.
-// 2. Object ID is returned.
-// 3. Use Object ID to form the filename of the file to upload to S3.
-// 4. Use S3 URL of file to trigger another Mongo API to 'media' collections.
-
 //////////////////////////////////////////////////////////
 //////////////////// BASIC SETUP /////////////////////////
 //////////////////////////////////////////////////////////
@@ -18,16 +13,6 @@ const MongoUtil = require('./MongoUtil');
 const ObjectId = require('mongodb').ObjectId;
 const axios = require('axios')
 
-// For AWS
-const aws = require('aws-sdk');
-const accessKeyId = process.env.S3_ACCESS_KEY;
-const secretAccessKey = process.env.S3_ACCESS_SECRET;
-aws.config.region = 'ap-southeast-1';
-
-// import routes
-const userRegistration = require("./routes/users");
-const postReviews = require("./routes/reviews")
-
 // Set up express app
 let app = express();
 
@@ -42,7 +27,7 @@ app.use(cors());
 let main = async () => {
 
     // API to link with MongoDB
-    const DBNAME = 'msw-keeposted';
+    const DBNAME = 'xxxxxx';
     let db = await MongoUtil.connect(mongoUrl, DBNAME);
 
     // Collection 'post-details' POST
